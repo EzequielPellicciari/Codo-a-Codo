@@ -43,6 +43,7 @@ main {
   height: auto;
   border-radius: 5px;
   margin-bottom: 10px;
+  object-fit: cover;
 }
 
 h2 {
@@ -51,6 +52,9 @@ h2 {
 
 .precio {
   color: #777;
+  display: grid;
+  height: 60px; /* Ajusta la altura según tus necesidades */
+  grid-template-rows: 1fr auto;
 }
 
 .btn-comprar {
