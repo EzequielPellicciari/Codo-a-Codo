@@ -28,9 +28,9 @@ main {
   background-color: #fff;
   width: 45%;
   padding: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -38,12 +38,16 @@ main {
 }
 
 .tarta img {
-  width: auto;
-  max-width: 200px;
-  height: auto;
+  width: 100%;
+  max-width: 300px;
+  height: 100%;
   border-radius: 5px;
   margin-bottom: 10px;
   object-fit: cover;
+}
+
+.tarta p {
+  text-align: center;
 }
 
 h2 {
@@ -53,8 +57,9 @@ h2 {
 .precio {
   color: #777;
   display: grid;
-  height: 60px; /* Ajusta la altura según tus necesidades */
+  height: 60px;
   grid-template-rows: 1fr auto;
+  font-size: 20px;
 }
 
 .btn-comprar {

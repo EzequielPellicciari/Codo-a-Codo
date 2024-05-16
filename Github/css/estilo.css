@@ -143,8 +143,16 @@ label {
 
 .boton-enviar {
   background-color: #4caf50;
-  font-size: 20px;
+  color: white;
+  padding: 10px 20px;
+  border: none;
   border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.boton-enviar:hover {
+  background-color: #45a049;
 }
 
 @media (max-width: 768px) {
