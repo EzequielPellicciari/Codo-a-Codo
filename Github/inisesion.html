@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="./css/inisesion.css"> 
+    
+</head>
+<body>
+    <header>
+        
+    </header>
+    <div class="container">
+        <form onsubmit="return validarFormulario()">
+            <h2>Iniciar Sesión</h2>
+            <div class="form-group">
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" name="usuario">
+            </div>
+            <div class="form-group">
+                <label for="contrasenia">Contraseña:</label>
+                <input type="password" id="contrasenia" name="contrasenia">
+            </div>
+            <div class="form-group">
+                <button type="submit">Iniciar Sesión</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+    function validarFormulario() {
+        var usuario = document.getElementById("usuario").value.trim();
+        var contrasenia = document.getElementById("contrasenia").value.trim();
+
+        // Validación básica de campos
+        if (usuario === "" || contrasenia === "") {
+            alert("Por favor, ingresa usuario y contraseña.");
+            return false; // Evitar el envío del formulario
+        }
+
+        // Aquí podrías agregar validaciones adicionales según tus requisitos
+        if (usuario !== "root" || contrasenia !== "root") {
+            alert("Usuario y Contrasenia INCORRECTOS");
+            return false; // Evitar el envío del formulario
+            
+        }
+
+        // Si la validación es exitosa, redirigir a otra página
+        window.location.href = "catering.html";
+        return false; // Evitar el envío del formulario (opcional)
+    }
+</script>
+</html>
