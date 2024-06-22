@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        
+
     </header>
     <div class="container">
         <form onsubmit="return validarFormulario()">
@@ -33,22 +33,21 @@
         var usuario = document.getElementById("usuario").value.trim();
         var contrasenia = document.getElementById("contrasenia").value.trim();
 
-        // Validación básica de campos
+
         if (usuario === "" || contrasenia === "") {
             alert("Por favor, ingresa usuario y contraseña.");
-            return false; // Evitar el envío del formulario
+            return false; 
         }
 
-        // Aquí podrías agregar validaciones adicionales según tus requisitos
         if (usuario !== "root" || contrasenia !== "root") {
             alert("Usuario y Contrasenia INCORRECTOS");
-            return false; // Evitar el envío del formulario
+            return false; 
             
         }
 
-        // Si la validación es exitosa, redirigir a otra página
-        window.location.href = "catering.html";
-        return false; // Evitar el envío del formulario (opcional)
+        
+        window.location.href = "indexbackend.html";
+        return false; 
     }
 </script>
 </html>
