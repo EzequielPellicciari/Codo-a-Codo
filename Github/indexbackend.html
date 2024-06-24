@@ -6,36 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock Pasteleria</title>
     <link rel="stylesheet" href="./static/css/estilos.css">
-</head>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/estilo.css">
 
 
 <body>
     <header>
-        <nav class="navbar-index ">
-            <img class="logo-nav" src="./static/imagenes/logos-nav.webp" alt="logo agencia de aprendizaje">
+        <h2 class="logo">Crème et Crème</h2>
+        <input type="checkbox" id="check">
+        <label for="check" class="mostrar-menu">
+            &#8801;
+        </label>
+        <nav class="menu">
+            <a href="./index.html">Inicio</a>
+            <a href="./contacto.html">Contacto</a>
+            <a href="./catering.html">Catering</a>
+            <a href="./productos.html">Productos</a>
+            <label for="check" class="esconder-menu">
+                &#215;
+            </label>
         </nav>
     </header>
 
-
-    <div>
-        <div class="logo-centrado">
-            <h1>Creme et Creme </h1>
-        </div>
-        <h2>Gestion de Stock</h2><br>
-        <table>
-            <tr>
-                <td class="contenedor-centrado"><a href="altas.html">Alta de Tortas</a></td>
-            </tr>
-            <tr>
-                <td class="contenedor-centrado "><a href="listado.html">Listado de Tortas</a></td>
-            </tr>
-            <tr>
-                <td class="contenedor-centrado "><a href="modificaciones.html">Modificar Tortas</a></td>
-            </tr>
-            <tr>
-                <td class="contenedor-centrado "><a href="listadoEliminar.html">Eliminar Tortas</a></td>
-            </tr>
-        </table>
+    <main>
+        <div>
+            <div class="logo-centrado">
+                <h1>Creme et Creme </h1>
+            </div>
+            <h2>Gestion de Stock</h2><br>
+            <table>
+                <tr>
+                    <td class="contenedor-centrado"><a href="altas.html">Alta de Tortas</a></td>
+                </tr>
+                <tr>
+                    <td class="contenedor-centrado "><a href="listado.html">Listado de Tortas</a></td>
+                </tr>
+                <tr>
+                    <td class="contenedor-centrado "><a href="modificaciones.html">Modificar Tortas</a></td>
+                </tr>
+                <tr>
+                    <td class="contenedor-centrado "><a href="listadoEliminar.html">Eliminar Tortas</a></td>
+                </tr>
+            </table>
+    </main>
 </body>
 
 </html>

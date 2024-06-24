@@ -32,7 +32,7 @@ body {
     top: 0;
     width: 100vw;
     height: 100px;
-    background-color: #4ab2c7;
+    background-color: #4ac765;
     display: flex;
     justify-content: flex-start;
     align-items: center; 
@@ -58,11 +58,11 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
     text-align: center;
-    color: #ffd200;
+    color: #6cc091;
 }
 
 form {
-    max-width: 400px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 20px;
     background-color: #390e8c;
@@ -72,10 +72,10 @@ form {
 }
 
 table {
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 auto;
     padding: 20px;
-    background-color: #390e8c;
+    background-color: #0b069892;
     border: 1px solid lightslategray;
     border-radius: 5px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
@@ -123,10 +123,10 @@ button:hover {
     background-color: #0056b3;
 }
 
-a {
+main a {
     padding: 8px;
     margin:4px;
-    background-color: #fdab13;
+    background-color: #7cbc5c;
     color: #1d1a39;
     border: none;
     border-radius: 5px;

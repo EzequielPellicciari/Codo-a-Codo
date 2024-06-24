@@ -7,42 +7,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Altas de Stock</title>
     <link rel="stylesheet" href="./static/css/estilos.css">
+    <link rel="stylesheet" href=".//css/style.css">
 </head>
 
 <body>
     <header>
-        <nav class="navbar-index ">
-            <img class="logo-nav" src="./static/imagenes/logos-nav.webp" alt="logo agencia de aprendizaje">
-        </nav>
+        <h2 class="logo">Crème et Crème</h2>
+        <input type="checkbox" id="check">
+        <label for="check" class="mostrar-menu">
+            &#8801;
+        </label>
+        <nav class="menu">
+            <a href="./index.html">Inicio</a>
+            <a href="./contacto.html">Contacto</a>
+            <a href="./catering.html">Catering</a>
+            <a href="./productos.html">Productos</a>
+            <label for="check" class="esconder-menu">
+                &#215;
+            </label>
     </header>
-
-    <div class="logo-centrado">
-       <h1>Creme et Creme</h1>
-    </div>
-    <h2>Agregar Productos al Inventario</h2><br>
-
-    <!--enctype="multipart/form-data" es necesario para enviar archivos al back.-->
-    <form id="formulario" enctype="multipart/form-data">
-        
-        <label for="descripcion">Descripción:</label>
-        <input type="text" id="descripcion" name="descripcion" required><br>
-
-        <label for="cantidad">Cantidad:</label>
-        <input type="number" id="cantidad" name="cantidad" required><br>
-
-        <label for="precio">Precio:</label>
-        <input type="number" step="0.01" id="precio" name="precio" required><br>
-
-        <label for="imagenProducto">Imagen del producto:</label>
-        <input type="file" id="imagenProducto" name="imagen">
-
-        <br><br>
-        
-        
-        <button type="submit">Agregar Producto</button>
-        <a href="index.html">Menu principal</a>
-    </form>
-
+    <main>
+        <div class="logo-centrado">
+            <h1>Creme et Creme</h1>
+        </div>
+        <h2>Agregar Productos al Inventario</h2><br>
+    
+        <!--enctype="multipart/form-data" es necesario para enviar archivos al back.-->
+        <form id="formulario" enctype="multipart/form-data">
+    
+            <label for="descripcion">Descripción:</label>
+            <input type="text" id="descripcion" name="descripcion" required><br>
+    
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad" required><br>
+    
+            <label for="precio">Precio:</label>
+            <input type="number" step="0.01" id="precio" name="precio" required><br>
+    
+            <label for="imagenProducto">Imagen del producto:</label>
+            <input type="file" id="imagenProducto" name="imagen">
+    
+            <br><br>
+    
+    
+            <button type="submit">Agregar Producto</button>
+            <a href="indexbackend.html">Menu principal</a>
+        </form>
+    </main>
     <script>
         const URL = "http://127.0.0.1:5000/"
 
