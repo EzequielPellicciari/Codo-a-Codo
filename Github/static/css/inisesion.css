@@ -1,6 +1,6 @@
-body {
+main {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f9f9f9; /* Color de fondo claro */
+    background-color: blanchedalmond; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    background: linear-gradient(135deg, #86A8E7, #91EAE4); /* Gradiente de colores */
+    background: linear-gradient(135deg, grey, #91EAE4); 
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 340px;
