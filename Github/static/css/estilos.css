@@ -23,6 +23,7 @@ body {
     align-items: center;
     margin-bottom: 5px;
     margin-top: 120px;
+    font-size: 25px;
 }
 
 .navbar-index{
@@ -65,7 +66,7 @@ form {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #390e8c;
+    background: linear-gradient(130deg, grey, #91EAE4);
     border: 1px solid lightslategray;
     border-radius: 5px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
@@ -75,8 +76,8 @@ table {
     max-width: 100%;
     margin: 0 auto;
     padding: 20px;
-    background-color: #2dcc12a2;
-    border: 1px solid lightslategray;
+    background: linear-gradient(130deg, grey, #91EAE4);
+    border: 1px solid black;
     border-radius: 5px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
@@ -126,7 +127,7 @@ button:hover {
 main a {
     padding: 8px;
     margin:4px;
-    background-color: #b15d3e;
+    background-color:#ff7854;
     color: #03020c;
     border: none;
     border-radius: 5px;
