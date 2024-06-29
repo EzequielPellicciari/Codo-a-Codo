@@ -43,6 +43,9 @@
     
             <label for="precio">Precio:</label>
             <input type="number" step="0.01" id="precio" name="precio" required><br>
+
+            <label for="tamanio">Tamanio:</label>
+            <input type="text"  id="tamanio" name="tamanio" required><br>
     
             <label for="imagenProducto">Imagen del producto:</label>
             <input type="file" id="imagenProducto" name="imagen">
@@ -100,6 +103,7 @@
                     document.getElementById('descripcion').value = "";
                     document.getElementById('cantidad').value = "";
                     document.getElementById('precio').value = "";
+                    document.getElementById('tamanio').value = "";
                     document.getElementById('imagenProducto').value = "";
                     
                 });

@@ -53,6 +53,9 @@
     
                     <label for="precioModificar">Precio:</label>
                     <input type="number" step="0.01" id="precioModificar" required><br>
+
+                    <label for="tamanioModificar">Tamanio:</label>
+                    <input type="text"  id="tamanioModificar" required><br>
     
                     <!-- Imagen actual del producto - Debe comentarse al subirse al servidor-->
                     <img id="imagen-actual" style="max-width: 200px; display: none;">
@@ -84,6 +87,7 @@
         let descripcion = '';
         let cantidad = '';
         let precio = '';
+        let tamanio = '';
         let imagen_url = '';
         let imagenSeleccionada = null;
         let imagenUrlTemp = null;
@@ -109,7 +113,7 @@
                     descripcion = data.descripcion;
                     cantidad = data.cantidad;
                     precio = data.precio;
-                    
+                    tamanio = data.tamanio;
                     imagen_url = data.imagen_url;
                     mostrarDatosProducto = true; //Activa la vista del segundo formulario
                     mostrarFormulario();
@@ -125,6 +129,7 @@
                 document.getElementById('descripcionModificar').value = descripcion;
                 document.getElementById('cantidadModificar').value = cantidad;
                 document.getElementById('precioModificar').value = precio;
+                document.getElementById('tamanioModificar').value = tamanio;
                 
 
                 const imagenActual = document.getElementById('imagen-actual');
@@ -165,7 +170,7 @@
             formData.append('codigo', codigo);
             formData.append('descripcion', document.getElementById('descripcionModificar').value);
             formData.append('cantidad', document.getElementById('cantidadModificar').value);
-            
+            formData.append('tamanio', document.getElementById('tamanioModificar').value);
             formData.append('precio', document.getElementById('precioModificar').value);
 
             // Si se ha seleccionado una imagen nueva, la añade al formData. 
@@ -200,7 +205,7 @@
             document.getElementById('descripcionModificar').value = '';
             document.getElementById('cantidadModificar').value = '';
             document.getElementById('precioModificar').value = '';
-            
+            document.getElementById('tamanioModificar').value = '';
             document.getElementById('nuevaImagen').value = '';
 
             const imagenActual = document.getElementById('imagen-actual');
@@ -213,7 +218,7 @@
             descripcion = '';
             cantidad = '';
             precio = '';
-            
+            tamanio = '';
             imagen_url = '';
             imagenSeleccionada = null;
             imagenUrlTemp = null;

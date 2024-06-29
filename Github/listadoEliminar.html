@@ -39,6 +39,7 @@
                     <th>Descripción</th>
                     <th>Cantidad</th>
                     <th align="right">Precio</th>
+                    <th>Tamanio</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -74,6 +75,7 @@
                             <td>${producto.descripcion}</td>
                             <td>${producto.cantidad}</td>
                             <td align="right">${producto.precio}</td>
+                            <td>${producto.tamanio}</td>
                             <td><button onclick="eliminarProducto('${producto.codigo}')">Eliminar</button></td>
                         `;
                     });

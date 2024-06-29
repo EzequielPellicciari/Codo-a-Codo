@@ -52,6 +52,7 @@ class Catalogo:
             descripcion VARCHAR(255) NOT NULL,
             cantidad INT NOT NULL,
             precio DECIMAL(10, 2) NOT NULL,
+            tamanio VARCHAR(50) NOT NULL,                
             imagen_url VARCHAR(255))''')
         self.conn.commit()
 
@@ -60,9 +61,9 @@ class Catalogo:
         self.cursor = self.conn.cursor(dictionary=True)
         
     #----------------------------------------------------------------
-    def agregar_producto(self, descripcion, cantidad, precio, imagen):
-        sql = "INSERT INTO productos (descripcion, cantidad, precio, imagen_url) VALUES (%s, %s, %s, %s)"
-        valores = (descripcion, cantidad, precio, imagen)
+    def agregar_producto(self, descripcion, cantidad, precio,tamanio, imagen):
+        sql = "INSERT INTO productos (descripcion, cantidad, precio,tamanio, imagen_url) VALUES (%s, %s, %s, %s,%s)"
+        valores = (descripcion, cantidad, precio,tamanio, imagen)
 
         self.cursor.execute(sql, valores)        
         self.conn.commit()
@@ -75,9 +76,9 @@ class Catalogo:
         return self.cursor.fetchone()
 
     #----------------------------------------------------------------
-    def modificar_producto(self, codigo, nueva_descripcion, nueva_cantidad, nuevo_precio, nueva_imagen):
-        sql = "UPDATE productos SET descripcion = %s, cantidad = %s, precio = %s, imagen_url = %s WHERE codigo = %s"
-        valores = (nueva_descripcion, nueva_cantidad, nuevo_precio, nueva_imagen, codigo)
+    def modificar_producto(self, codigo, nueva_descripcion, nueva_cantidad, nuevo_precio,nuevo_tamanio, nueva_imagen):
+        sql = "UPDATE productos SET descripcion = %s, cantidad = %s, precio = %s,tamanio=%s, imagen_url = %s WHERE codigo = %s"
+        valores = (nueva_descripcion, nueva_cantidad, nuevo_precio,nuevo_tamanio, nueva_imagen, codigo)
         self.cursor.execute(sql, valores)
         self.conn.commit()
         return self.cursor.rowcount > 0
@@ -105,6 +106,7 @@ class Catalogo:
             print(f"Descripción: {producto['descripcion']}")
             print(f"Cantidad...: {producto['cantidad']}")
             print(f"Precio.....: {producto['precio']}")
+            print(f"Tamanio.....: {producto['tamanio']}")
             print(f"Imagen.....: {producto['imagen_url']}")
             
             print("-" * 40)
@@ -163,6 +165,7 @@ def agregar_producto():
     descripcion = request.form['descripcion']
     cantidad = request.form['cantidad']
     precio = request.form['precio']
+    tamanio = request.form['tamanio']
     imagen = request.files['imagen']
     nombre_imagen=""
 
@@ -172,7 +175,7 @@ def agregar_producto():
     nombre_base, extension = os.path.splitext(nombre_imagen) #Separa el nombre del archivo de su extensión.
     nombre_imagen = f"{nombre_base}_{int(time.time())}{extension}" #Genera un nuevo nombre para la imagen usando un timestamp, para evitar sobreescrituras y conflictos de nombres.
 
-    nuevo_codigo = catalogo.agregar_producto(descripcion, cantidad, precio, nombre_imagen)
+    nuevo_codigo = catalogo.agregar_producto(descripcion, cantidad, precio,tamanio, nombre_imagen)
     if nuevo_codigo:    
         imagen.save(os.path.join(RUTA_DESTINO, nombre_imagen))
 
@@ -194,6 +197,7 @@ def modificar_producto(codigo):
     nueva_descripcion = request.form.get("descripcion")
     nueva_cantidad = request.form.get("cantidad")
     nuevo_precio = request.form.get("precio")
+    nuevo_tamanio = request.form.get("tamanio")
     
     
     
@@ -227,7 +231,7 @@ def modificar_producto(codigo):
 
 
     # Se llama al método modificar_producto pasando el codigo del producto y los nuevos datos.
-    if catalogo.modificar_producto(codigo, nueva_descripcion, nueva_cantidad, nuevo_precio, nombre_imagen):
+    if catalogo.modificar_producto(codigo, nueva_descripcion, nueva_cantidad, nuevo_precio,nuevo_tamanio, nombre_imagen):
         
         #Si la actualización es exitosa, se devuelve una respuesta JSON con un mensaje de éxito y un código de estado HTTP 200 (OK).
         return jsonify({"mensaje": "Producto modificado"}), 200
